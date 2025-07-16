@@ -6,12 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Średnia z trzech liczb</title>
   <script>
-    function calculateAverage() {
-      const a = parseFloat(document.getElementById('num1').value) || 0;
-      const b = parseFloat(document.getElementById('num2').value) || 0;
-      const c = parseFloat(document.getElementById('num3').value) || 0;
-      const avg = ((a + b + c) / 3).toFixed(2);
-      document.getElementById('result').textContent = avg;
+    function calculatePERT() {
+      const normal = parseFloat(document.getElementById('num2').value) || 0;
+      const optimistic = parseFloat(document.getElementById('num1').value) || normal;
+      const pessimistic = parseFloat(document.getElementById('num3').value) || normal;
+
+      const pert = ((optimistic + 4 * normal + pessimistic) / 6).toFixed(2);
+      const standardDeviation = ((pessimistic - optimistic) / 6).toFixed(2);
+      const total = (parseFloat(pert) + parseFloat(standardDeviation)).toFixed(2);
+
+      document.getElementById('result').textContent = total;
     }
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
@@ -22,14 +26,14 @@
   <div class="w-full max-w-screen-xl">
     <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
 
-      <input id="num1" type="number" placeholder="Pesimistic" class="py-10 text-6xl text-center border rounded shadow"
-        oninput="calculateAverage()" />
+      <input id="num1" type="number" placeholder="Optimistic" class="py-10 text-6xl text-center border rounded shadow"
+        oninput="calculatePERT()" />
 
       <input id="num2" type="number" placeholder="Normal" class="py-10 text-6xl text-center border rounded shadow"
-        oninput="calculateAverage()" />
+        oninput="calculatePERT()" />
 
-      <input id="num3" type="number" placeholder="Optimistic" class="py-10 text-6xl text-center border rounded shadow"
-        oninput="calculateAverage()" />
+      <input id="num3" type="number" placeholder="Pessimistic" class="py-10 text-6xl text-center border rounded shadow"
+        oninput="calculatePERT()" />
 
       <div class="py-10 text-6xl text-center border rounded shadow bg-white flex items-center justify-center">
         <span id="result">0.00</span>
