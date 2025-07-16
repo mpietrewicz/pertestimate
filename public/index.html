@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,42 +15,28 @@
     }
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
+
 <body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
   <div class="w-full max-w-screen-xl">
     <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-      
-      <input
-        id="num1"
-        type="number"
-        placeholder="Liczba 1"
-        class="py-10 text-6xl text-center border rounded shadow"
-        oninput="calculateAverage()"
-      />
 
-      <input
-        id="num2"
-        type="number"
-        placeholder="Liczba 2"
-        class="py-10 text-6xl text-center border rounded shadow"
-        oninput="calculateAverage()"
-      />
+      <input id="num1" type="number" placeholder="Pesimistic" class="py-10 text-6xl text-center border rounded shadow"
+        oninput="calculateAverage()" />
 
-      <input
-        id="num3"
-        type="number"
-        placeholder="Liczba 3"
-        class="py-10 text-6xl text-center border rounded shadow"
-        oninput="calculateAverage()"
-      />
+      <input id="num2" type="number" placeholder="Normal" class="py-10 text-6xl text-center border rounded shadow"
+        oninput="calculateAverage()" />
 
-      <div
-        class="py-10 text-6xl text-center border rounded shadow bg-white flex items-center justify-center"
-      >
+      <input id="num3" type="number" placeholder="Optimistic" class="py-10 text-6xl text-center border rounded shadow"
+        oninput="calculateAverage()" />
+
+      <div class="py-10 text-6xl text-center border rounded shadow bg-white flex items-center justify-center">
         <span id="result">0.00</span>
       </div>
-      
+
     </div>
   </div>
 </body>
+
 </html>
